@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Генератор расписания</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📅 Генератор учебного расписания</h1>
+            <p>Автоматизированный программный комплекс составления расписания для учителей на основе РУН ППС и учебного расписания</p>
+        </header>
+
+        <main>
+            <div class="hero">
+                <div class="hero-content">
+                    <h2>Добро пожаловать в систему генерации расписания</h2>
+                    <p>Загрузите необходимые файлы и получите готовое расписание в несколько кликов</p>
+                    <a href="{{ url_for('upload') }}" class="btn btn-primary">Начать работу →</a>
+                </div>
+            </div>
+
+            <div class="features">
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h3>Автоматическая обработка</h3>
+                    <p>Система автоматически обрабатывает файлы РУН ППС и расписания, создавая готовые документы</p>
+                </div>
+
+                <!-- <div class="feature-card">
+                    <div class="feature-icon">🔧</div>
+                    <h3>Гибкие настройки</h3>
+                    <p>Возможность загрузки файлов сопоставлений (mappings) для точной настройки обработки</p>
+                </div> -->
+
+                <div class="feature-card">
+                    <div class="feature-icon">📥</div>
+                    <h3>Удобное скачивание</h3>
+                    <p>Все результаты можно скачать отдельными файлами или одним архивом</p>
+                </div>
+            </div>
+
+            <div class="instructions">
+                <h2>Как это работает</h2>
+                <ol class="steps">
+                    <li>
+                        <span class="step-number">1</span>
+                        <div class="step-content">
+                            <h3>Подготовьте файлы</h3>
+                            <p>Вам понадобятся файл РУН ППС (обязательно) и файл расписания (обязательно).</p>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="step-number">2</span>
+                        <div class="step-content">
+                            <h3>Загрузите файлы</h3>
+                            <p>На странице загрузки выберите нужные файлы и нажмите кнопку "Обработать"</p>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="step-number">3</span>
+                        <div class="step-content">
+                            <h3>Получите результат</h3>
+                            <p>После обработки вы сможете скачать готовые файлы расписания</p>
+                        </div>
+                    </li>
+                </ol>
+            </div>
+        </main>
+
+        <footer>
+            <p>© 2026 Автоматизированный программный комплекс составления расписания. Все права защищены.</p>
+        </footer>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

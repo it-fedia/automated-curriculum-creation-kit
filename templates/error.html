@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ошибка - Генератор расписания</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>❌ Ошибка</h1>
+            <nav>
+                <a href="{{ url_for('index') }}" class="nav-link">← На главную</a>
+            </nav>
+        </header>
+
+        <main>
+            <div class="error-container" style="text-align: center; padding: 50px; background: white; border-radius: var(--border-radius); box-shadow: var(--box-shadow);">
+                <div style="font-size: 4em; margin-bottom: 20px;">⚠️</div>
+                <h2 style="color: var(--danger-color); margin-bottom: 20px;">{{ error }}</h2>
+                <p style="margin-bottom: 30px;">Попробуйте вернуться на главную и повторить попытку</p>
+                <a href="{{ url_for('index') }}" class="btn btn-primary">Вернуться на главную</a>
+            </div>
+        </main>
+
+        <footer>
+            <p>© 2024 Генератор расписания</p>
+        </footer>
+    </div>
+</body>
+</html>

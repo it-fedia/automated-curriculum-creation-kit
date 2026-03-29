@@ -1,0 +1,156 @@
+<!-- <!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Загрузка файлов - Генератор расписания</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📅 Загрузка файлов</h1>
+            <nav>
+                <a href="{{ url_for('index') }}" class="nav-link">← На главную</a>
+            </nav>
+        </header>
+
+        <main>
+            <div class="upload-container">
+                <form id="uploadForm" class="upload-form" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <label for="run_file" class="required">Файл РУН ППС:</label>
+                        <div class="file-input-wrapper">
+                            <input type="file" id="run_file" name="run_file" accept=".xlsx,.xls" required>
+                            <div class="file-info">Выберите файл РУН ППС (обязательно)</div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="schedule_file" class="required">Файл расписания:</label>
+                        <div class="file-input-wrapper">
+                            <input type="file" id="schedule_file" name="schedule_file" accept=".xlsx,.xls" required>
+                            <div class="file-info">Выберите файл расписания (обязательно)</div>
+                        </div>
+                    </div>
+
+                    <div class="info-box">
+                        <p>📌 Загрузите два файла для генерации расписания:</p>
+                        <ul>
+                            <li><strong>РУН ППС</strong> - файл с нагрузкой преподавателей</li>
+                            <li><strong>Расписание</strong> - файл с текущим расписанием</li>
+                            <li><strong>timetable_by_teachers.xlsx</strong> - итоговый файл с расписанием для преподавателей на текущий семестр</li>
+                        </ul>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-primary" id="submitBtn">
+                            <span class="btn-text">Обработать</span>
+                            <span class="btn-loading" style="display: none;">Обработка...</span>
+                        </button>
+                        <button type="reset" class="btn btn-secondary">Очистить</button>
+                    </div>
+                </form>
+
+                <div id="progress" class="progress" style="display: none;">
+                    <div class="progress-bar">
+                        <div class="progress-fill"></div>
+                    </div>
+                    <div class="progress-text">Идет обработка...</div>
+                </div>
+
+                <div id="result" class="result" style="display: none;">
+                    <h2>Результаты обработки</h2>
+                    <div id="resultContent"></div>
+                </div>
+
+                <div id="error" class="error" style="display: none;"></div>
+            </div>
+        </main>
+
+        <footer>
+            <p>© 2024 Генератор расписания</p>
+        </footer>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Загрузка файлов - Генератор расписания</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📅 Загрузка файлов</h1>
+            <nav>
+                <a href="{{ url_for('index') }}" class="nav-link">← На главную</a>
+            </nav>
+        </header>
+
+        <main>
+            <div class="upload-container">
+                <form id="uploadForm" class="upload-form" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <label for="run_file" class="required">Файл РУН ППС:</label>
+                        <div class="file-input-wrapper">
+                            <input type="file" id="run_file" name="run_file" accept=".xlsx,.xls" required>
+                            <div class="file-info">Выберите файл РУН ППС (обязательно)</div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="schedule_file" class="required">Файл расписания:</label>
+                        <div class="file-input-wrapper">
+                            <input type="file" id="schedule_file" name="schedule_file" accept=".xlsx,.xls" required>
+                            <div class="file-info">Выберите файл расписания (обязательно)</div>
+                        </div>
+                    </div>
+
+                    <div class="info-box">
+                        <p>📌 Загрузите два файла для генерации расписания:</p>
+                        <ul>
+                            <li><strong>РУН ППС</strong> - файл с нагрузкой преподавателей</li>
+                            <li><strong>Расписание</strong> - файл с текущим расписанием</li>
+                        </ul>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-primary" id="submitBtn">
+                            <span class="btn-text">Обработать</span>
+                            <span class="btn-loading" style="display: none;">Обработка...</span>
+                        </button>
+                        <button type="reset" class="btn btn-secondary">Очистить</button>
+                    </div>
+                </form>
+
+                <div id="progress" class="progress" style="display: none;">
+                    <div class="progress-bar">
+                        <div class="progress-fill"></div>
+                    </div>
+                    <div class="progress-text">Идет обработка...</div>
+                </div>
+
+                <div id="result" class="result" style="display: none;">
+                    <h2>✅ Готово!</h2>
+                    <div id="resultContent"></div>
+                </div>
+
+                <div id="error" class="error" style="display: none;"></div>
+            </div>
+        </main>
+
+        <footer>
+            <p>© 2024 Генератор расписания</p>
+        </footer>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
